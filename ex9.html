@@ -1,0 +1,71 @@
+<c:set var="books" value="${yourListOfBooks}" />
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <c:forEach var="book" items="${books}">
+      <c:set var="priceFormatted" value="${book.price}" />
+      <fmt:formatNumber value="${priceFormatted}" type="currency" currencySymbol="$" maxFractionDigits="2" />
+      <c:set var="priceFormatted" value="${priceFormatted}" />
+      <tr>
+        <td>Book 1</td>
+        <td>John Doe</td>
+        <td>1234567890</td>
+        <td>$10.99</td>
+      </tr>
+      <tr>
+        <td>Book 2</td>
+        <td>Jane Smith</td>
+        <td>0987654321</td>
+        <td>$5.99</td>
+      </tr>
+      <tr>
+        <td>Book 3</td>
+        <td>Bob Johnson</td>
+        <td>1357908642</td>
+        <td>$20.50</td>
+      </tr>
+    </c:forEach>
+  </tbody>
+</table>
+ 
+<h2>Ascending order of price</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Book 2</td>
+      <td>Jane Smith</td>
+      <td>0987654321</td>
+      <td>$5.99</td>
+    </tr>
+    <tr>
+      <td>Book 1</td>
+      <td>John Doe</td>
+      <td>1234567890</td>
+      <td>$10.99</td>
+    </tr>
+    <tr>
+      <td>Book 3</td>
+      <td>Bob Johnson</td>
+      <td>1357908642</td>
+      <td>$20.50</td>
+    </tr>
+  </tbody>
+</table>
+
